@@ -1,3 +1,4 @@
+import 'constants.dart';
 import 'package:flutter/material.dart';
 import 'home_page.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       home: SafeArea(
           child: Scaffold(
             appBar: AppBar(
-              title: Text('BMI CALCULATOR'),
+              title: Text('BMI CALCULATOR',style: kAppBarText,),
               centerTitle: true,
             ),
             body: Padding(

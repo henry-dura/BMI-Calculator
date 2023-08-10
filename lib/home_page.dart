@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 import 'reusable_container.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'constants.dart';
+import 'container_contents.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
-
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  int height = 120;
+  int weight = 50;
+  int age = 18;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -20,70 +25,83 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               ReusableContainer(
-                content: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    FaIcon(
-                      FontAwesomeIcons.mars,
-                      size: 60,
-                    ),
-                    Text(
-                      'MALE',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                          color: Color(0xFF6D7187)),
-                    )
-                  ],
-                ),
-              ),
+                  content: FirstContainerContent(
+                      iconName: FontAwesomeIcons.mars, gender: 'MALE')),
               ReusableContainer(
-                content: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    FaIcon(
-                      FontAwesomeIcons.venus,
-                      size: 60,
-                    ),
-                    Text(
-                      'FEMALE',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                          color: Color(0xFF6D7187)),
-                    )
-                  ],
+                  content: FirstContainerContent(
+                      iconName: FontAwesomeIcons.venus, gender: 'FEMALE'))
+            ],
+          ),
+        ),
+        ReusableContainer(
+          content: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              const Text(
+                'HEIGHT',
+                style: kSmallTextStyle,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.baseline,
+                textBaseline: TextBaseline.alphabetic,
+                children: [
+                  Text(height.toString(), style: kBigTextStyle),
+                  const Text(
+                    'cm',
+                    style: TextStyle(fontSize: 20),
+                  )
+                ],
+              ),
+              SliderTheme(
+                data: SliderThemeData(
+                    thumbColor: Colors.red,
+                    activeTrackColor: Colors.white,
+                    inactiveTrackColor: const Color(0x57A0A2B2),
+                    thumbShape:
+                        const RoundSliderThumbShape(enabledThumbRadius: 15),
+                    overlayColor: Colors.red.withOpacity(0.22)),
+                child: Slider.adaptive(
+                  value: height.toDouble(),
+                  max: 500,
+                  min: 20,
+                  // divisions: 10,
+                  onChanged: (double val) => setState(() {
+                    height = val.toInt();
+                  }),
                 ),
               )
             ],
           ),
         ),
-        const ReusableContainer(
-          content: Text('one'),
-        ),
-        const Expanded(
+        Expanded(
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               ReusableContainer(
-                content: Text('one'),
+                content:
+                    SecondContainerContent(heading: 'WEIGHT', value: weight),
               ),
               ReusableContainer(
-                content: Text('one'),
+                content: SecondContainerContent(heading: 'AGE', value: age),
               )
             ],
           ),
         ),
-        Container(
-          width: double.infinity,
-          height: 60,
-          margin: const EdgeInsets.symmetric(
-            vertical: 15,
-          ),
-          color: Colors.red,
+        FilledButtonTheme(
+          data: const FilledButtonThemeData(
+              style: ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll<Color>(Colors.red),
+                  shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.zero)))),
+          child: FilledButton(
+              onPressed: () {print('calculated');},
+              child: const Text(
+                'CALCULATE YOUR BMI',
+                style: TextStyle(fontSize: 20),
+              )),
         ),
+
       ],
     );
   }

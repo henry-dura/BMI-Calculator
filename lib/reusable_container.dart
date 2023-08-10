@@ -12,7 +12,8 @@ class ReusableContainer extends StatelessWidget {
     return Expanded(
       child: Container(
         child: content,
-        margin: const EdgeInsets.symmetric(vertical: 15,horizontal: 5),
+        // padding: EdgeInsets.symmetric(vertical:2),
+        margin: const EdgeInsets.symmetric(vertical: 10,horizontal: 5),
         decoration: BoxDecoration(
           color: Theme.of(context).primaryColor,
           borderRadius: BorderRadius.circular(
