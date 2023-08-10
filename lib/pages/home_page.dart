@@ -1,8 +1,9 @@
+import 'package:body_mass_calculator/pages/second_page.dart';
 import 'package:flutter/material.dart';
-import 'reusable_container.dart';
+import '../utilities/reusable_container.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'constants.dart';
-import 'container_contents.dart';
+import '../utilities/constants.dart';
+import '../utilities/container_contents.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -88,20 +89,17 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
-        FilledButtonTheme(
-          data: const FilledButtonThemeData(
-              style: ButtonStyle(
-                  backgroundColor: MaterialStatePropertyAll<Color>(Colors.red),
-                  shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                      borderRadius: BorderRadius.zero)))),
-          child: FilledButton(
-              onPressed: () {print('calculated');},
-              child: const Text(
-                'CALCULATE YOUR BMI',
-                style: TextStyle(fontSize: 20),
-              )),
-        ),
-
+        FilledButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SecondPage()),
+              );
+            },
+            child: const Text(
+              'CALCULATE YOUR BMI',
+              style: TextStyle(fontSize: 20),
+            )),
       ],
     );
   }

@@ -1,6 +1,6 @@
-import 'constants.dart';
 import 'package:flutter/material.dart';
-import 'home_page.dart';
+import 'pages/home_page.dart';
+import 'utilities/reusable_appbar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,22 +15,30 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData.dark().copyWith(
-        appBarTheme: AppBarTheme(color: Color(0xFF0E112E)),
-        scaffoldBackgroundColor:  Color(0xFF0E112E),
-        primaryColor: Color(0xFF272B4C),
-      ),
-      home: SafeArea(
-          child: Scaffold(
-            appBar: AppBar(
-              title: Text('BMI CALCULATOR',style: kAppBarText,),
-              centerTitle: true,
+        appBarTheme: const AppBarTheme(color: Color(0xFF0E112E)),
+        scaffoldBackgroundColor:  const Color(0xFF0E112E),
+        primaryColor: const Color(0xFF272B4C),
+          filledButtonTheme:FilledButtonThemeData(
+            style: ButtonStyle(
+              backgroundColor: MaterialStatePropertyAll<Color>(Colors.red),
+              shape: MaterialStatePropertyAll(
+                RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+              ),
             ),
+          ),
+      ),
+
+      home: const SafeArea(
+          child: Scaffold(
+            appBar: ReusableAppBar(),
             body: Padding(
-              padding: const EdgeInsets.all(12.0),
+              padding:  EdgeInsets.all(12.0),
               child: HomePage(),
             ),
           )),
     );
   }
 }
+
+
 

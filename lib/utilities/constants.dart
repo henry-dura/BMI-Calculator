@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 const kAppBarText= TextStyle(
-  fontSize: 25,
+  fontSize: 20,
   fontWeight: FontWeight.w900,
 );
 
