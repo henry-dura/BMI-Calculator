@@ -4,33 +4,70 @@ import '../utilities/reusable_container.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../utilities/constants.dart';
 import '../utilities/container_contents.dart';
+import 'dart:math';
+
+
+enum Gender{male,female}
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
+
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  int height = 120;
+  int height = 80;
   int weight = 50;
-  int age = 18;
+  int age = 10;
+
+  Color genderMaleContainerColor = kGenderActiveContainerColor;
+  Color genderFemaleContainerColor = kContainerColor;
+  // Color genderContainerContentColor = kGenderContentInactive;
+
+  void genderActive(Gender gender) {
+      setState(() {
+        gender == Gender.male?genderMaleContainerColor = kGenderActiveContainerColor:genderMaleContainerColor = kContainerColor;
+        gender == Gender.female?genderFemaleContainerColor = kGenderActiveContainerColor:genderFemaleContainerColor = kContainerColor;
+      });
+  }
+
+
+  double calculateBMI(){
+    double heightInMeters = height/100;
+    return (weight/pow(heightInMeters, 2));
+  }
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        const Expanded(
+        Expanded(
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               ReusableContainer(
-                  content: FirstContainerContent(
-                      iconName: FontAwesomeIcons.mars, gender: 'MALE')),
+                bg: genderMaleContainerColor,
+                content: const FirstContainerContent(
+                  iconName: FontAwesomeIcons.mars,
+                  gender: 'MALE',
+                ),
+                onpress: () {
+                  genderActive(Gender.male);
+                },
+              ),
               ReusableContainer(
-                  content: FirstContainerContent(
-                      iconName: FontAwesomeIcons.venus, gender: 'FEMALE'))
+                bg: genderFemaleContainerColor,
+                content: const FirstContainerContent(
+                  iconName: FontAwesomeIcons.venus,
+                  gender: 'FEMALE',
+                  // iconColor: genderContainerContentColor,
+                ),
+                onpress: () {
+                  genderActive(Gender.female);
+                },
+              )
             ],
           ),
         ),
@@ -64,7 +101,7 @@ class _HomePageState extends State<HomePage> {
                     overlayColor: Colors.red.withOpacity(0.22)),
                 child: Slider.adaptive(
                   value: height.toDouble(),
-                  max: 500,
+                  max: 250,
                   min: 20,
                   // divisions: 10,
                   onChanged: (double val) => setState(() {
@@ -93,8 +130,10 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const SecondPage()),
+                MaterialPageRoute(builder: (context) =>  SecondPage(resultBMI: calculateBMI(),)),
               );
+
+
             },
             child: const Text(
               'CALCULATE YOUR BMI',

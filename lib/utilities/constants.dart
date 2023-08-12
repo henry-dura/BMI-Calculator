@@ -17,3 +17,11 @@ const kBigTextStyle = TextStyle(
 );
 
 
+const kGenderContentInactive = Color(0xFF8D8E98);
+const kGenderContentActive = Colors.white;
+
+const kGenderActiveContainerColor = Color(0xFF1D1F33);
+
+const kContainerColor =  Color(0xFF111428);
+
+

@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:body_mass_calculator/utilities/reusable_appbar.dart';
 
 class SecondPage extends StatefulWidget {
-  const SecondPage({Key? key}) : super(key: key);
+  const SecondPage({Key? key, required this.resultBMI}) : super(key: key);
+  final double resultBMI;
 
   @override
   State<SecondPage> createState() => _SecondPageState();
@@ -28,17 +29,14 @@ class _SecondPageState extends State<SecondPage> {
             ),
             Expanded(
                 child: Container(
-                  margin: EdgeInsets.symmetric(vertical: 15),
+                  margin: const EdgeInsets.symmetric(vertical: 15),
               color: Theme.of(context).primaryColor,
                   // width: double.infinity,
-              child: const Text('content'),
+              child:  Text(widget.resultBMI.toStringAsFixed(2)),
             )),
             FilledButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const SecondPage()),
-                  );
+                  Navigator.pop(context);
                 },
                 child: const Text(
                   'RE-CALCULATE YOUR BMI',

@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'customized_button.dart';
 import 'constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:body_mass_calculator/pages/home_page.dart';
 
 class FirstContainerContent extends StatelessWidget {
   const FirstContainerContent(
-      {super.key, required this.iconName, required this.gender});
+      {super.key, required this.iconName, required this.gender, this.iconColor = kGenderContentInactive});
   final IconData iconName;
   final String gender;
-
+  final Color iconColor;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -18,6 +19,7 @@ class FirstContainerContent extends StatelessWidget {
         FaIcon(
           iconName,
           size: 60,
+
         ),
         Text(gender, style: kSmallTextStyle)
       ],
@@ -26,15 +28,20 @@ class FirstContainerContent extends StatelessWidget {
 }
 
 
-class SecondContainerContent extends StatelessWidget {
-  const SecondContainerContent({
-    super.key,
-    required this.value,
-    required this.heading,
-  });
 
-  final int value;
+
+class SecondContainerContent extends StatefulWidget {
+  SecondContainerContent({Key? key,required this.value,required this.heading}) : super(key: key);
+
+  int value;
   final String heading;
+
+
+
+  @override
+  State<SecondContainerContent> createState() => _SecondContainerContentState();
+}
+class _SecondContainerContentState extends State<SecondContainerContent> {
 
   @override
   Widget build(BuildContext context) {
@@ -42,22 +49,25 @@ class SecondContainerContent extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         Text(
-          heading,
+          widget.heading,
           style: kSmallTextStyle,
         ),
         Text(
-          value.toString(),
+        widget.value.toString(),
           style: kBigTextStyle,
         ),
-        const Row(
+        Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            CustomButton(icon: FontAwesomeIcons.plus,),
-            CustomButton(icon: FontAwesomeIcons.minus,)
+            CustomButton(icon: FontAwesomeIcons.plus,onPress:(){setState(() {
+              widget.value++;
+            });},),
+            CustomButton(icon: FontAwesomeIcons.minus,onPress: (){setState(() {
+              widget.value--;
+            });},)
           ],
         )
       ],
-    );
+    );;
   }
 }
-

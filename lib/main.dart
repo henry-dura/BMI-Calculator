@@ -15,20 +15,21 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData.dark().copyWith(
-        appBarTheme: const AppBarTheme(color: Color(0xFF0E112E)),
-        scaffoldBackgroundColor:  const Color(0xFF0E112E),
-        primaryColor: const Color(0xFF272B4C),
-          filledButtonTheme:FilledButtonThemeData(
+        appBarTheme: const AppBarTheme(color: Color(0xFF0A0D22)),
+        scaffoldBackgroundColor:  const Color(0xFF0A0D22),
+        primaryColor: const Color(0xFF111428),
+          filledButtonTheme:const FilledButtonThemeData(
             style: ButtonStyle(
               backgroundColor: MaterialStatePropertyAll<Color>(Colors.red),
               shape: MaterialStatePropertyAll(
                 RoundedRectangleBorder(borderRadius: BorderRadius.zero),
               ),
+                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
             ),
           ),
       ),
 
-      home: const SafeArea(
+      home:  SafeArea(
           child: Scaffold(
             appBar: ReusableAppBar(),
             body: Padding(
