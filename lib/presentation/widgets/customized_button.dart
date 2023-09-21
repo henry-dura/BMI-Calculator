@@ -1,4 +1,4 @@
-import 'package:body_mass_calculator/utilities/constants.dart';
+import 'package:body_mass_calculator/presentation/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -22,7 +22,7 @@ class CustomButton extends StatelessWidget {
         width: 60.0,
         height: 50.0,
       ),
-      shape: CircleBorder(),
+      shape: const CircleBorder(),
       child: FaIcon(icon),
     );
   }

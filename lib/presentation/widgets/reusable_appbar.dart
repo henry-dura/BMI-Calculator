@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:body_mass_calculator/utilities/constants.dart';
+import 'package:body_mass_calculator/presentation/constants/constants.dart';
 
 class ReusableAppBar extends StatelessWidget implements PreferredSizeWidget {
   const ReusableAppBar({
@@ -9,7 +9,7 @@ class ReusableAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text('BMI CALCULATOR',style: kAppBarText,),
+      title: const Text('BMI CALCULATOR',style: kAppBarText,),
       centerTitle: true,
     );
   }
