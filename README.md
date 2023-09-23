@@ -47,7 +47,9 @@ This project was built using Flutter framework and dart programming language.
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[View Live](https://herox-maths.onrender.com)
+<div style="text-align: center;">
+  <img src="demoVideo/demoScreen.gif" alt="Demo video" width="700">
+</div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
