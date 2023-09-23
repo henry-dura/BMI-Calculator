@@ -1,6 +1,5 @@
 import 'dart:math';
 import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
 
 class CalculateCubit extends Cubit<double> {
   CalculateCubit() : super(0.0);
@@ -14,7 +13,3 @@ class CalculateCubit extends Cubit<double> {
 }
 
 
-// double calculateBMI() {
-//   double heightInMeters = height / 100;
-//   return (weight / pow(heightInMeters, 2));
-// }

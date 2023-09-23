@@ -1,10 +1,10 @@
-import 'package:body_mass_calculator/business_logic/cubits/weightCubit/weight_cubit.dart';
+import 'package:body_mass_calculator/logic/cubits/weight_cubit.dart';
 import 'package:flutter/material.dart';
 import 'customized_button.dart';
-import '../constants/constants.dart';
+import '../../constants/constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:body_mass_calculator/business_logic/cubits/weightCubit/weight_cubit.dart';
+import 'package:body_mass_calculator/logic/cubits/weight_cubit.dart';
 
 
 class SecondContainerContent extends StatelessWidget {

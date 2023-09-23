@@ -1,4 +1,4 @@
-import 'package:body_mass_calculator/presentation/constants/constants.dart';
+import 'package:body_mass_calculator/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 class ReusableContainer extends StatelessWidget {

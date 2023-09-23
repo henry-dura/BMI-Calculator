@@ -1,10 +1,11 @@
-import 'package:body_mass_calculator/business_logic/cubits/ageCubit/age_cubit.dart';
-import 'package:body_mass_calculator/business_logic/cubits/calculateCubit/calculate_cubit.dart';
-import 'package:body_mass_calculator/business_logic/cubits/heightCubit/height_cubit.dart';
-import 'package:body_mass_calculator/presentation/router/router.dart';
+import 'presentation/router/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'business_logic/cubits/weightCubit/weight_cubit.dart';
+import 'logic/cubits/weight_cubit.dart';
+import 'logic/cubits/age_cubit.dart';
+import 'logic/cubits/calculate_cubit.dart';
+import 'logic/cubits/gender_select_cubit.dart';
+import 'logic/cubits/height_cubit.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,8 +23,10 @@ class MyApp extends StatelessWidget {
         BlocProvider<AgeCubit>(create:(context)=> AgeCubit()),
         BlocProvider<HeightCubit>(create:(context)=>HeightCubit()),
         BlocProvider<CalculateCubit>(create:(context)=>CalculateCubit()),
+        BlocProvider<GenderSelectCubit>(create: (context)=>GenderSelectCubit())
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData.dark().copyWith(
           appBarTheme: const AppBarTheme(color: Color(0xFF0A0D22)),

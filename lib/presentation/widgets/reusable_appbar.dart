@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:body_mass_calculator/presentation/constants/constants.dart';
+import 'package:body_mass_calculator/constants/constants.dart';
 
 class ReusableAppBar extends StatelessWidget implements PreferredSizeWidget {
   const ReusableAppBar({
