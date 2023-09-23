@@ -12,7 +12,6 @@
     - [Setup](#setup)
     - [Prerequisites](#prerequisites)
     - [Usage](#usage)
-    - [Run tests](#run-tests)
 - [👥 Authors](#authors)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
@@ -48,7 +47,7 @@ This project was built using Flutter framework and dart programming language.
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 <div style="text-align: center;">
-  <img src="demoVideo/demoScreen.gif" alt="Demo video" width="700">
+  <img src="demoVideo/demoScreen.gif" alt="Demo video" width="700" height="200">
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -64,8 +63,9 @@ To get a local copy up and running, follow these steps.
 In order to run this project you need:
 - A personal computer connected to the internet
 - Have a local version control like git installed on your computer and a Github account.
-- Install flutter on your machine:[flutter installation guide](https://docs.flutter.dev/get-started/install)
-- Setup your code editor (Visual studio code, Andriod studio, ...) : [editor setup](https://docs.flutter.dev/get-started/editor)
+- Install flutter on your machine: [Flutter Installation Guide](https://docs.flutter.dev/get-started/install)
+- Setup your code editor (Visual Studio Code, Android Studio) :  [Editor Setup](https://docs.flutter.dev/get-started/editor)
+- Run `flutter doctor` to confirm everything is setup properly.
 
 
 ### Setup
@@ -82,7 +82,11 @@ cd BMI-Calculator
 
 ### Usage
 
-To run the project, execute the following command:
+To run the project on your emulator, execute the following command:
+
+```sh
+flutter pub get
+```
 
 ```sh
 flutter run
@@ -124,11 +128,12 @@ If you like this project and want to show your support, please give it a ⭐️!
 
 ## Acknowledgments
 
-A list of resources that I find helpful and would like to give credit to :
+I thank Ruben Vaalt for the wonderful [design ](https://dribbble.com/shots/4585382-Simple-BMI-Calculator/attachments/4585382?mode=media). Also some resources that I find helpful and would like to give credit to :
 
-- [Ruben Vaalt ](https://dribbble.com/shots/4585382-Simple-BMI-Calculator/attachments/4585382?mode=media)
+- [Dr.Angela Yu - Complete flutter course](https://www.udemy.com/course/flutter-bootcamp-with-dart)
+- [Tiberiu Potec - flutter BLoC course](https://www.udemy.com/course/bloc-from-zero-to-hero)
 - [GitHub ](https://www.github.com)
-- [Youtube ](https://www.youtube.com)
+- [ Stack overflow](https://stackoverflow.com/)
 
 
 <!-- LICENSE -->
