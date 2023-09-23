@@ -82,11 +82,7 @@ cd BMI-Calculator
 
 ### Usage
 
-To run the project on your emulator, execute the following command:
-
-```sh
-flutter pub get
-```
+To run the project, execute the following command:
 
 ```sh
 flutter run
@@ -128,12 +124,11 @@ If you like this project and want to show your support, please give it a ⭐️!
 
 ## Acknowledgments
 
-I thank Ruben Vaalt for the wonderful [design ](https://dribbble.com/shots/4585382-Simple-BMI-Calculator/attachments/4585382?mode=media). Also some resources that I find helpful and would like to give credit to :
+A list of resources that I find helpful and would like to give credit to :
 
-- [Dr.Angela Yu - Complete flutter course](https://www.udemy.com/course/flutter-bootcamp-with-dart)
-- [Tiberiu Potec - flutter BLoC course](https://www.udemy.com/course/bloc-from-zero-to-hero)
+- [Ruben Vaalt ](https://dribbble.com/shots/4585382-Simple-BMI-Calculator/attachments/4585382?mode=media)
 - [GitHub ](https://www.github.com)
-- [ Stack overflow](https://stackoverflow.com/)
+- [Youtube ](https://www.youtube.com)
 
 
 <!-- LICENSE -->
