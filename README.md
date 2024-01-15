@@ -47,7 +47,7 @@ This project was built using Flutter framework and dart programming language.
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 <div style="text-align: center;">
-  <img src="demoVideo/demoScreen.gif" alt="Demo video" width="700" height="500">
+  <img src="demoVideo/demoScreen.gif" alt="Demo video" width="700" height="1000">
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
